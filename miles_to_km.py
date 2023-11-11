@@ -2,8 +2,9 @@ from tkinter import *
 
 
 def button_clicked():
-    new_value = float(user_input.get()) * 1.609344
-    label_1_1.config(text=new_value)
+    miles = float(user_input.get())
+    km = miles*1.609
+    label_1_1.config(text=f"{km}")
     if user_input.get() == "1" or user_input.get() == "0":
         label_2_0.config(text="Mile")
     else:
@@ -11,15 +12,15 @@ def button_clicked():
 
 
 window = Tk()
-window.title("Mile to Km Converter")
-window.minsize(width=300, height=100)
-window.config(padx=50, pady=50)
+window.title("Miles to Kilometer Converter")
+#window.minsize(width=300, height=100)
+window.config(padx=20, pady=20)
 
 label_0_1 = Label(text="is equal to: ")
 label_0_1.grid(column=0, row=1)
 label_0_1.config(padx=50, pady=50)
 
-user_input = Entry()
+user_input = Entry(width=7)
 user_input.grid(column=1, row=0)
 user_input.insert(END, string="0")
 
